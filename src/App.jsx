@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-
+import characters from './data/characters.json'
 import './App.css'
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <>
       <h1>Marvel Characters</h1>
       <ul>
-        <li>Beast</li>
-        <li>Captain America</li>
-        <li>Deadpool</li>
+        {characters.map((character) => (
+          <li key={character.id}>{character.name}</li>
+        ))}
       </ul>
     </>
   )
