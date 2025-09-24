@@ -1,18 +1,35 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import CharactersList from './components/CharactersList'
-import NumberOfCharacters from './components/NumberOfCharacters'
-import characters from './data/characters.json'
+import Navigation from './components/Navigation'
+import HomePage from './pages/Home'
+import CharactersPage from './pages/Characters'
+import AboutPage from './pages/About'
+import ContactPage from './pages/Contact'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentPage, setCurrentPage] = useState('home')
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage />
+      case 'characters':
+        return <CharactersPage />
+      case 'about':
+        return <AboutPage />
+      case 'contact':
+        return <ContactPage />
+      default:
+        return <HomePage />
+    }
+  }
 
   return (
     <>
-      <h1>Marvel Characters</h1>
-      <NumberOfCharacters characters={characters} />
-      <CharactersList characters={characters} />
+      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <main style={{ padding: '0 20px' }}>
+        {renderPage()}
+      </main>
     </>
   )
 }
