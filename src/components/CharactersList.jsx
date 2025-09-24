@@ -1,9 +1,14 @@
-import characters from '../data/characters.json'
+function CharactersList({ characters = [] }) {
+  if (!characters || characters.length === 0) {
+    return (
+      <div>
+        <p>No characters to display</p>
+      </div>
+    )
+  }
 
-function CharactersList() {
   return (
     <div>
-      {/* <p>Nombre de personnages : {characters.length}</p> */}
       <ul>
         {characters.map((character) => (
           <li key={character.id}>{character.name}</li>

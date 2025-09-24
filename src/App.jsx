@@ -12,7 +12,7 @@ function App() {
     <>
       <h1>Marvel Characters</h1>
       <NumberOfCharacters characters={characters} />
-      <CharactersList />
+      <CharactersList characters={characters} />
     </>
   )
 }
