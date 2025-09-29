@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import Navigation from './components/Navigation'
-import HomePage from './pages/Home'
-import CharactersPage from './pages/Characters'
-import AboutPage from './pages/About'
-import ContactPage from './pages/Contact'
 import './App.css'
+import { createBrowserRouter, RouterProvider } from "react-router";
+import routes from './routes';
+
+// router to navigate through the app
+const router = createBrowserRouter(routes);
 
 function App() {
   return (
     <>
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <main style={{ padding: '0 20px' }}>
-        {renderPage()}
-      </main>
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
 export default App
