@@ -7,23 +7,6 @@ import ContactPage from './pages/Contact'
 import './App.css'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />
-      case 'characters':
-        return <CharactersPage />
-      case 'about':
-        return <AboutPage />
-      case 'contact':
-        return <ContactPage />
-      default:
-        return <HomePage />
-    }
-  }
-
   return (
     <>
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
