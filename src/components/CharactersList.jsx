@@ -14,13 +14,13 @@ function CharactersList({ characters = [] }) {
       <style>
         {`
           li a {
-            color: #333;
+            color: #007bff;
             text-decoration: none;
           }
           
           li a:hover {
             text-decoration: underline;
-            color: #007bff;
+            color: #0056b3;
           }
         `}
       </style>
