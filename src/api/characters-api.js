@@ -1,11 +1,23 @@
-import characters from '../data/characters.json';
-
-// Retourne la liste complète des personnages
+import characters from '../data/characters.json'
+/**
+* returns the list of characters
+* @returns
+*/
 export const getCharacters = () => {
-  return characters;
-};
-
-// Retourne un personnage en fonction de son id
+return characters;
+}
+/**
+* returns a character by id
+* @param {*} id
+* @returns
+*/
 export const getCharacterById = (id) => {
-  return characters.find(character => character.id === id) || null;
-};
+  const character = characters.find(character => character.id === id);
+  
+  // Nouvelle ligne qui ne sera pas testée, au cas où
+  if (!character) {
+    throw new Error(`Character with id ${id} not found`);
+  }
+  
+  return character;
+}
