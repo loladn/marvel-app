@@ -1,9 +1,10 @@
-function NumberOfCharacters({ characters = [] }) {
-  if (!characters || characters.length === 0) {
-    return <p>There is no character</p>
-  }
-  
-  return <p>There is {characters.length} characters</p>
-}
+export default function NumberOfCharacters({ characters = [] }) {
+    if (characters.length === 0) {
+      return <p>There is no character</p>;
+    }
 
-export default NumberOfCharacters
+    const verb = characters.length === 1 ? "is" : "are";
+    const noun = characters.length === 1 ? "character" : "characters";
+
+    return <p>There {verb} {characters.length} {noun}</p>;
+}
