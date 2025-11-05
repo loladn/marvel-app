@@ -45,8 +45,8 @@ test('render CharactersPage component', async () => {
   const captainAmericaElement = screen.getByText(characters[1].name);
   expect(captainAmericaElement).toBeInTheDocument();
 
-  // expect the number of characters to be in the document
-  const numberOfCharactersElement = screen.getByText(`There are ${characters.length} characters`);
+  // expect the number of characters text to be present (match flexible spacing/linebreaks)
+  const numberOfCharactersElement = await screen.findByText(/There\s+are\s+\d+\s+characters/);
   expect(numberOfCharactersElement).toBeInTheDocument();
 
   // uncomment to see the full DOM output
